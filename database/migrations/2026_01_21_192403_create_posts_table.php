@@ -25,6 +25,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        /** Para revertir o eliminar la tabla posts */
         Schema::dropIfExists('posts');
     }
 };
