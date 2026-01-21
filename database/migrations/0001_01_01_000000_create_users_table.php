@@ -12,12 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
+            /*El siguiente campo es un entero grande */
             $table->id();
             $table->string('name');
+            /** El siguiente campo debe de ser único en la tabla */
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            /** El siguiente me crea dos campos para la actualización del registro */
             $table->timestamps();
         });
 
@@ -38,7 +41,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations. Revierte todos los cambios realizados en el método up.
      */
     public function down(): void
     {
