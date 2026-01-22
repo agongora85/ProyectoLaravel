@@ -12,7 +12,8 @@ Route::get('/contact',function(){
 })->name('contact');
 
 Route::get('/principal',function(){
-    return view('principal');
+    $datos=["titulo"=>"Tienda Virtual - Vista Principal","mensaje"=>"Bienvenido a la vista principal"];
+    return view('principal',$datos);
 })->name('principal');
 
 
