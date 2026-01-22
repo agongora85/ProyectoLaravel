@@ -55,7 +55,7 @@
       <p>Lorem ipsum dolor sit ame.</p>
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="#">@yield('link1')</a>
+          <a class="nav-link active" href="{{route('contact')}}" target="_blank">@yield('link1')</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">@yield('link2','Link #2')</a>
