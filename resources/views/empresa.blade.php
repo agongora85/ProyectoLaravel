@@ -1,0 +1,18 @@
+@extends('layouts.app')
+@push('css')
+    <style>
+        .fondo {
+            background: #302886;
+        }
+  </style>
+@endpush
+@section('titulo')
+    Bienvenido a la página de EC
+@endsection
+@section('subtitulo')
+    Explorando las oportunidades con Laravel 12
+@endsection
+@section('link1','Active')
+@section('titulo1')
+    <h1>About Me</h1>
+@endsection

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,5 +17,7 @@ Route::get('/principal',function(){
     $datos=["titulo"=>"Tienda Virtual - Vista Principal","mensaje"=>"Bienvenido a la vista principal"];
     return view('principal',$datos);
 })->name('principal');
+
+Route::get('/empresa',[HomeController::class,'empresa'])->name('empresa');
 
 
