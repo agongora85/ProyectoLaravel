@@ -4,6 +4,11 @@
         .fondo {
             background: #302886;
         }
+
+        .img-responsive{
+            width: 100%;
+            height: 100%;
+        }
   </style>
 @endpush
 @section('titulo')

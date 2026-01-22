@@ -46,7 +46,7 @@
     <div class="col-sm-4">
       <h2>@yield("titulo1")</h2>
       <h5>Photo of me:</h5>
-      <div class="fakeimg">Fake Image</div>
+      <div class="fakeimg"><img src="Imagenes\Imagen01.png" class='img-responsive'></div>
       <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
       <h3 class="mt-4">Some Links</h3>
       <p>Lorem ipsum dolor sit ame.</p>
@@ -69,13 +69,13 @@
     <div class="col-sm-8">
       <h2>TITLE HEADING</h2>
       <h5>Title description, Dec 7, 2020</h5>
-      <div class="fakeimg">Fake Image</div>
+      <div class="fakeimg"><img src="Imagenes\Imagen02.jfif" class='img-responsive'></div>
       <p>Some text..</p>
       <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
 
       <h2 class="mt-5">TITLE HEADING</h2>
       <h5>Title description, Sep 2, 2020</h5>
-      <div class="fakeimg">Fake Image</div>
+      <div class="fakeimg"><img src="Imagenes\Imagen03.jpg" class='img-responsive'></div>
       <p>Some text..</p>
       <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
     </div>
