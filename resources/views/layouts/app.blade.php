@@ -87,6 +87,7 @@
 
 <div class="mt-5 p-4 bg-dark text-white text-center">
   <p>Footer</p>
+  <em>@yield("Autor"):@yield("actividad")</em><br>
   <i class="fa-brands fa-facebook"></i>
   <i class="fa-brands fa-twitter"></i>
   <i class="fa-brands fa-instagram"></i>
