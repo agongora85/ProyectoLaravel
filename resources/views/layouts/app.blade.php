@@ -50,7 +50,7 @@
       <h2>@yield("titulo1")</h2>
       <h5>Photo of me:</h5>
       <div class="fakeimg"><img src="Imagenes\Imagen01.png" class='img-responsive'></div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <p>@yield("descripcion_about")</p>
       <h3 class="mt-4">Some Links</h3>
       <p>Lorem ipsum dolor sit ame.</p>
       <ul class="nav nav-pills flex-column">
@@ -75,6 +75,7 @@
       <div class="fakeimg"><img src="Imagenes\Imagen02.jfif" class='img-responsive'></div>
       <p>Some text..</p>
       <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <span class="badge bg-primary">@yield("texto_ejemplo")</span>
 
       <h2 class="mt-5">TITLE HEADING</h2>
       <h5>Title description, Sep 2, 2020</h5>

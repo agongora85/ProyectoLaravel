@@ -22,7 +22,13 @@
 @section('titulo1')
     <h1>About Me</h1>
 @endsection
+@section("descripcion_about")
+    {{$descripcion_about}}
+@endsection
 @section("Autor")
     {{$nombre}}
 @endsection
 @section("actividad",$actividad)
+@section("texto_ejemplo")
+    {{$texto_ejemplo}}
+@endsection
