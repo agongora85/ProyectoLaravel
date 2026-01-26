@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            // La propiedad nullable de preferencia se debe de agregar cuando se cuente con datos existentes en la tabla.
             $table->string('avatar')->nullable()->after('name');
+            $table->string('telefono')->nullable()->after('avatar');
+            $table->string('calle')->nullable()->after('telefono');
         });
     }
 
