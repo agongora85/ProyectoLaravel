@@ -23,6 +23,7 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        // El fake() es para la generación de un nombre aleatorio
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),

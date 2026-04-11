@@ -21,6 +21,101 @@ Route::get('/principal',function(){
 
 Route::get('/empresa',[HomeController::class,'empresa'])->name('empresa');
 
+Route::get('/pagina',[HomeController::class, 'index']);
+Route::get('/index',function(){
+    $datos["nombre"]="Alejandro Góngora Escalante";
+    $datos["fecha"]="2026-12-15";
+    $datos["actividad"]="Desarrollo de Software";
+    $datos["descripcion_about"]="Empresa dedicada al desarollo de software a la medida de sus clientes";
+    $datos["texto_ejemplo"]="Aquí va la descripción del texto de ejemplo";
+    return view('index',$datos);
+});
+
+//Definimos el método a utilizar
+Route::get('nuevoregistro', function(){
+    $pagina=new Pagina;
+    $pagina->name='CARLOS';
+    $pagina->email='maria4@gmail.com';
+    $pagina->email_verified_at=date('Y-m-d');
+    $pagina->password='123456';
+    $pagina->avatar='user.png';
+    $pagina->telefono='999999';
+    $pagina->calle='89';
+    $pagina->save();
+    return $pagina;
+});
+
+//Definimos el método para buscar por el id
+// Para obtener unicamente un registro
+Route::get('buscarpaginaid',function(){
+    $post=Pagina::find(5);
+    return $post;
+});
+
+//Definimo el método para buscar por un campo determinado
+Route::get('buscarxname',function(){
+    $post=Pagina::where('name','carlos')->first();
+    return $post;
+});
+
+//Para recuperar más de un registro
+Route::get('obtenertodos',function(){
+    $post=Pagina::all();
+    return $post;
+});
+
+//Definimos el método para cambiar un registro
+Route::get('updatename',function(){
+    $post=Pagina::where('name','María')->first();
+    $post->email='agongoraescalante125@gmail.com';
+    $post->save();
+    return $post;
+});
+
+//Definimos un método para obtener una lista conforme a un criterio determinado
+// Para obtener más de un registro
+Route::get('filter',function(){
+    //$post=Pagina::where('calle','like','%123%')->get();
+    $post=Pagina::where('calle','like','%123%')->orderBy("id","desc")->get();
+    return $post;
+});
+ 
+// Para especificar unicamente los campos que quiera
+Route::get('trescampos',function(){
+    $post=Pagina::select('name','email','telefono')->get();
+    return $post;
+});
+
+// Conforme a una selección solamente traerme un cierto número de registros
+Route::get('filtroxnumreg',function(){
+    $post=Pagina::select("name","email")->orderBy("name")->take(3)->get();
+    return $post;
+});
+
+//Para eliminar un determinado registro
+Route::get('eliminar_registro',function(){
+    $post=Pagina::find(5);
+    $post->delete();
+    return "Eliminado";
+});
+
+//Obtener la fecha conforme a un formato
+Route::get('Obtenerfechaformato',function(){
+    $post=Pagina::select("name","email","created_at")->find(3);
+    return $post;
+});
+
+//Obtener el valor de is_active
+Route::get('Obtenerestatus',function(){
+    $post=Pagina::find(3);
+    // dd función de depuración que muestra el contenido de una variable
+    dd($post->is_active);
+    //return $post;
+});
+
+// El siguiente método se debe de llamar mediante un método de tipo request (por ejemplo, utilizando AJAX o Postman)
+Route::put('/actualizar-dato/{id}',[HomeController::class,'update'])->name('dato.update');
+
 Route::get('prueba',function(){
     //return 'Hola desde la ruta de prueba';
     /**

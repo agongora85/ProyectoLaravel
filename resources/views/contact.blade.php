@@ -18,12 +18,17 @@
         <h2>{{$carrera}}</h2>
         <a href="{{route('vista_inicio')}}">Ir a la vista de inicio</a><br>
         <a href="{{route('contact')}}">Ir a la vista de contacto</a>
+        
+        
         <x-alert type='danger'>
             <x-slot name="title">
                 Esto es un  mensaje de alerta obtenido desde la vista de contacto
             </x-slot>
             Contenido del alert
         </x-alert>
+
+
+
         <div class="row">
             <div class="col-sm-3">
                <x-card>
@@ -32,6 +37,9 @@
                     </x-slot>
                     <x-slot name="texto_tarjeta">
                         El contenido de la tarjeta va aquí
+                    </x-slot>
+                     <x-slot name="texto_boton">
+                        boton1
                     </x-slot>
                </x-card>
             </div>
@@ -44,6 +52,9 @@
                     <x-slot name="texto_tarjeta">
                         El contenido de la tarjeta va aquí
                     </x-slot>
+                    <x-slot name="texto_boton">
+                        boton2
+                    </x-slot>
                </x-card>
             </div>
 
@@ -55,6 +66,9 @@
                     <x-slot name="texto_tarjeta">
                         El contenido de la tarjeta va aquí
                     </x-slot>
+                    <x-slot name="texto_boton">
+                        boton3
+                    </x-slot>
                </x-card>
             </div>
 
@@ -65,6 +79,9 @@
                     </x-slot>
                     <x-slot name="texto_tarjeta">
                         El contenido de la tarjeta va aquí
+                    </x-slot>
+                    <x-slot name="texto_boton">
+                        boton4
                     </x-slot>
                </x-card>
             </div>
