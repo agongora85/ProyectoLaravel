@@ -9,6 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
   <link rel="stylesheet" href="https://cdn.datatables.net/2.3.6/css/dataTables.dataTables.css">
+  <!-- <script src="https://cdn.tailwindcss.com"></script>-->
   <style>
   .fakeimg {
     height: 200px;

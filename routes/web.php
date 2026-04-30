@@ -21,7 +21,17 @@ Route::get('/principal',function(){
 
 Route::get('/empresa',[HomeController::class,'empresa'])->name('empresa');
 
-Route::get('/pagina',[HomeController::class, 'index']);
+Route::get('/pagina',[HomeController::class, 'index'])->name("pagina.index");
+
+Route::get('/pagina/create',[HomeController::class, 'nuevapagina'])->name("pagina.create");
+
+
+Route::post('/pagina',[HomeController::class,'guardarpagina'])->name('pagina.nueva');
+
+
+Route::get('/pagina/edit/{id}',[HomeController::class,'edit'])->name('pagina.edit');
+Route::put('/pagina/actualizar/{pagina}',[HomeController::class,'updatepaginaform'])->name('pagina.actualizar');
+
 Route::get('/index',function(){
     $datos["nombre"]="Alejandro Góngora Escalante";
     $datos["fecha"]="2026-12-15";
@@ -30,6 +40,10 @@ Route::get('/index',function(){
     $datos["texto_ejemplo"]="Aquí va la descripción del texto de ejemplo";
     return view('index',$datos);
 });
+
+Route::get('/pagina/{id}',[HomeController::class, 'detalle'])->name('pagina.detalle');
+
+Route::delete('/pagina/delete/{id}',[HomeController::class,'eliminar'])->name("pagina.delete");
 
 //Definimos el método a utilizar
 Route::get('nuevoregistro', function(){
