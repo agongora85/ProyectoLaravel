@@ -37,6 +37,7 @@
                     </x-slot>
                     <x-slot name="texto_tarjeta">
                         El contenido de la tarjeta va aquí
+                        Texto de prueba
                     </x-slot>
                      <x-slot name="texto_boton">
                         boton1

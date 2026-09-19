@@ -13,6 +13,19 @@ class Pagina extends Model
     // Se específica la tabla con la cual se pretende trabajar
     // Se recomienda que el modelo se escriba en singular y las tablas en plural
     protected $table='paginas';
+    protected $fillable = [
+        'name',
+        'email',
+        //'telefono',
+        'calle',
+        'password'
+    ];
+
+    // Si queremos hacer el proceso a la inversa en el guardado, podemos llamar a la siguiente propiedad
+    /*protected $guarded = [
+        'is_active'
+    ];*/
+
     //Creamos un atributo mediante cast para el guardado y la obtención de los datos
     protected function casts():array{
         return [

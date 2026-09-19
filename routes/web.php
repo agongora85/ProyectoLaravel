@@ -9,15 +9,27 @@ Route::get('/', function () {
     return view('welcome');
 })->name('vista_inicio');
 
+
+
+Route::get('/principal',function(){
+    $datos=[
+        "titulo"=>"Tienda Virtual - Vista Principal",
+        "mensaje"=>"Bienvenido a la vista principal",
+        "Autor"=>"Alejandro"];
+    return view('principal',$datos);
+})->name('principal');
+
+Route::get('/mensaje/{id}',function($id){
+    return "Mostrando el mensaje: {$id}";
+})->where('id','[0-9]+');
+
+
 Route::get('/contact',function(){
     $nombre="Alejandro Góngora Escalante";
     return view('contact',['nombre'=>$nombre,'carrera'=>'Doctor en Sistemas Computacionales']);
 })->name('contact');
 
-Route::get('/principal',function(){
-    $datos=["titulo"=>"Tienda Virtual - Vista Principal","mensaje"=>"Bienvenido a la vista principal"];
-    return view('principal',$datos);
-})->name('principal');
+
 
 Route::get('/empresa',[HomeController::class,'empresa'])->name('empresa');
 

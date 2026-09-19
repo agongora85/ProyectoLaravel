@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index(){
         // Retorno todo el contenido de la tabla de paginas
         //$pagina=Pagina::orderBy('id','desc')->get();
-       $pagina=Pagina::orderBy('id','desc')->paginate(10); 
+       /*$pagina=Pagina::orderBy('id','desc')->paginate(10); 
         $datos["nombre"]="Alejandro Góngora Escalante";
         $datos["fecha"]="2026-12-15";
         $datos["actividad"]="Desarrollo de Software";
@@ -22,7 +22,8 @@ class HomeController extends Controller
         $datos['paginas']=$pagina;
         //return $pagina;
         //Tomo el nombre de la variable como referencia para mostrar la vista
-        return view('index',$datos);
+        return view('index',$datos);*/
+        return view('welcome');
     }
 
     public function edit($id){
@@ -75,7 +76,8 @@ class HomeController extends Controller
     }*/
 
     public function guardarpagina(Request $request){
-        $pagina=new Pagina();
+        Pagina::create($request->all());
+        /*$pagina=new Pagina();
         $pagina->name=$request->name;
         $pagina->email=$request->email;
         $pagina->telefono=$request->telefono;
@@ -83,7 +85,8 @@ class HomeController extends Controller
         $pagina->password=bcrypt('123456');
         $pagina->save();
         return redirect('/pagina');
-        //return $request->all();
+        //return $request->all();*/
+        return redirect()->route('pagina.index');
     }
 
     public function nuevapagina(){
@@ -109,14 +112,18 @@ class HomeController extends Controller
     }
 
     public function update(Request $request){
-        $usuarios=new Pagina();
+        // return $request->all();// Para obtener los datos que se están enviado directamente desde el formulario
+        Pagina::update($request->all());
+
+        /*$usuarios=new Pagina();
         $respuesta=$usuarios->BuscarId($request->id);
         if(!empty($respuesta)){
             $respuesta->name=$request->name;
             $respuesta->calle=$request->calle;
             $respuesta->save();
-        }
-        return $respuesta;
+        }*/
+        //return $respuesta;
+        return redirect()->route('pagina.detalle');
     }
 
     public function eliminar($id){

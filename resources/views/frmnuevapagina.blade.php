@@ -36,6 +36,7 @@
             <input type='text' name='telefono' id='telefono' class="form-control">
             <label for='calle' class="form-label">Calle</label>
             <input type='text' name='calle' id='calle' class="form-control"><br>
+            <input type="hidden" value="<?=bcrypt('123456')?>" name='password' id='password'>
             <button class='btn btn-primary'>Crea página</button>
         </form>
     </div>

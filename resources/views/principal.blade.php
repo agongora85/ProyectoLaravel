@@ -16,4 +16,4 @@
             <p>{{$titulo}}</p>
         @endif
     </div>
-<x-footer>Alejandro Góngora Escalante</x-footer>
+<x-footer>{{ $titulo }}</x-footer>

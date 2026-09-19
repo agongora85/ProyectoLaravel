@@ -8,3 +8,4 @@
     <title>{{$titulo ?? 'Document'}}</title>
 </head>
 <body>
+    <p>{{ $titulo }}</p>
